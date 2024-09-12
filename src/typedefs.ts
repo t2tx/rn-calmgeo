@@ -28,10 +28,23 @@ const configSchema = z.object({
   syncThreshold: z.number().int(),
   maxBatchSize: z.number().int(),
   maxDaysToPersist: z.number().int().min(0),
+
+  fetchActivity: z.boolean(),
 });
 type Config = z.infer<typeof configSchema>;
 
 // for location
+const activityTypeEnum = z.enum([
+  'still',
+  'on_foot',
+  'walking',
+  'running',
+  'in_vehicle',
+  'on_bicycle',
+  'unknown',
+]);
+type ActivityTypeKey = z.infer<typeof activityTypeEnum>;
+
 const locationSchema = z.object({
   id: z.string(),
   timestamp: z.string().datetime({ precision: 3 }),
@@ -52,6 +65,12 @@ const locationSchema = z.object({
     mock: z.boolean().optional(),
     external: z.boolean().optional(),
   }),
+  activity: z
+    .object({
+      type: activityTypeEnum,
+      confidence: z.number(),
+    })
+    .optional(),
 });
 type Location = z.infer<typeof locationSchema>;
 
@@ -64,6 +83,8 @@ export {
   requestMethodEnum,
   configSchema,
   type Config,
+  activityTypeEnum,
+  type ActivityTypeKey,
   locationSchema,
   type Location,
   listenerSchema,

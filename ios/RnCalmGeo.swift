@@ -127,7 +127,7 @@ class RnCalmGeo: RCTEventEmitter {
         .self, from: config.data(using: .utf8) ?? Data())
 
     var ret = CalmGeoConfig.standard
-    
+
     ret.desiredAccuracy = toCalmGeoDesiredAccuracy(rn: rnConfig.desiredAccuracy).rawValue
     ret.distanceFilter = rnConfig.distanceFilter
     ret.disableSpeedMultiplier = rnConfig.disableSpeedMultiplier
@@ -143,7 +143,8 @@ class RnCalmGeo: RCTEventEmitter {
     ret.syncThreshold = rnConfig.syncThreshold
     ret.maxBatchSize = rnConfig.maxBatchSize
     ret.maxDaysToPersist = rnConfig.maxDaysToPersist
-    
+    ret.fetchActivity = rnConfig.fetchActivity
+
     return ret
   }
 }

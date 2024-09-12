@@ -59,15 +59,17 @@ pod install
 | syncThreshold          | number                                 | The minimum number of persisted records to trigger an sync action.                                                                               |
 | maxBatchSize           | number                                 | If you've enabled HTTP feature by configuring an url and autySync: true, this parameter will limit the number of records attached to each batch. |
 | maxDaysToPersist       | number                                 | Maximum number of days to store a geolocation in local storage.                                                                                  |
+| fetchActivity          | boolean                                | Set true to fetch activity information.                                                                                                          |
 
 #### 2.2 `Location`
 
-| field     | type                 | description                                                 |
-| --------- | -------------------- | ----------------------------------------------------------- |
-| id        | string               | UUID                                                        |
-| timestamp | string               | ISO-8601 UTC timestamp provided by the native location API. |
-| isMoving  | boolean              | true if location was recorded while in the moving state.    |
-| coords    | [COORDS](#23-coords) | location info                                               |
+| field     | type                     | description                                                 |
+| --------- | ------------------------ | ----------------------------------------------------------- |
+| id        | string                   | UUID                                                        |
+| timestamp | string                   | ISO-8601 UTC timestamp provided by the native location API. |
+| isMoving  | boolean                  | true if location was recorded while in the moving state.    |
+| coords    | [COORDS](#23-coords)     | location info                                               |
+| activity  | [Activity](#26-activity) | activity info                                               |
 
 #### 2.3 `Coords`
 
@@ -106,6 +108,13 @@ function (location: Location) void
 
 - POST
 - PUT
+
+#### 2.6 `Activity`
+
+| field      | type   | description                                                                     |
+| ---------- | ------ | ------------------------------------------------------------------------------- |
+| type       | enum   | `still \| on_foot \| walking \| running \| in_vehicle \| on_bicycle \| unknown` |
+| confidence | number | [0~100]%                                                                        |
 
 ## Sample
 

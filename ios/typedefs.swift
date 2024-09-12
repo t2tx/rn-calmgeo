@@ -11,18 +11,18 @@ enum RnCalmGeoDesiredAccuracy: String, Codable {
 
 func toCalmGeoDesiredAccuracy(rn: RnCalmGeoDesiredAccuracy) -> CalmGeoDesiredAccuracy {
   switch rn {
-    case .BEST_FOR_NAVIGATION:
-        CalmGeoDesiredAccuracy.bestForNavigation
-    case .BEST:
-      CalmGeoDesiredAccuracy.best
-    case .TEN_METERS:
-      CalmGeoDesiredAccuracy.tenMeters
-    case .HUNDRED_METERS:
-      CalmGeoDesiredAccuracy.hundredMeters
-    case .KILOMETER:
-      CalmGeoDesiredAccuracy.kilometer
-    case .THREE_KILOMETER:
-      CalmGeoDesiredAccuracy.threeKilometer
+  case .BEST_FOR_NAVIGATION:
+    CalmGeoDesiredAccuracy.bestForNavigation
+  case .BEST:
+    CalmGeoDesiredAccuracy.best
+  case .TEN_METERS:
+    CalmGeoDesiredAccuracy.tenMeters
+  case .HUNDRED_METERS:
+    CalmGeoDesiredAccuracy.hundredMeters
+  case .KILOMETER:
+    CalmGeoDesiredAccuracy.kilometer
+  case .THREE_KILOMETER:
+    CalmGeoDesiredAccuracy.threeKilometer
   }
 }
 
@@ -42,4 +42,6 @@ struct RnCalmGeoConfig: Codable {
   public var syncThreshold: Int
   public var maxBatchSize: Int
   public var maxDaysToPersist: UInt32
+
+  public var fetchActivity: Bool
 }
