@@ -21,6 +21,8 @@ const configJson = {
   syncThreshold: 12,
   maxBatchSize: 250,
   maxDaysToPersist: 7,
+
+  fetchActivity: true,
 };
 
 export default function App() {
