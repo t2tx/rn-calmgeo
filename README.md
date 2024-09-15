@@ -1,5 +1,9 @@
 # rn-calmgeo
 
+[![npm version](https://badge.fury.io/js/rn-calmgeo.svg)](https://badge.fury.io/js/rn-calmgeo)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/serverless-httpapi-cloudfront/master/LICENSE)
+[![npm downloads](https://img.shields.io/npm/dt/rn-calmgeo.svg?style=flat)](https://www.npmjs.com/package/rn-calmgeo)
+
 A React Native Module wrapper for [CalmGeo](https://github.com/t2tx/calm-geo)
 
 ## Compatibility
