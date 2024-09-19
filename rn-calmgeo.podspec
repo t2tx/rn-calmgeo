@@ -12,6 +12,8 @@ Pod::Spec.new do |s|
   s.authors      = package["author"]
   s.swift_versions   = ['5.10']
 
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+
   s.ios.deployment_target = "14.0"
   s.source       = { :git => "https://github.com/t2tx/rn-calmgeo.git", :tag => "#{s.version}" }
 
@@ -39,5 +41,5 @@ Pod::Spec.new do |s|
       s.dependency "ReactCommon/turbomodule/core"
     end
   end
-  s.dependency "CalmGeo", "~> 0.9.8"
+  s.dependency "CalmGeo", "~> 0.9.9"
 end
