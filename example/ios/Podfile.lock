@@ -1030,7 +1030,7 @@ PODS:
     - React-Core
     - React-jsi
   - ReactTestApp-Resources (1.0.0-dev)
-  - rn-calmgeo (0.9.10):
+  - rn-calmgeo (0.9.10-a):
     - CalmGeo (~> 0.9.9)
     - glog
     - RCT-Folly (= 2022.05.16.00)
@@ -1259,7 +1259,7 @@ SPEC CHECKSUMS:
   ReactNativeHost: ec449c23b87d2fe931a52ec71f3a0a6039250341
   ReactTestApp-DevSupport: 6a2de08b780d695cb5d2fbe3e2222ea471de5866
   ReactTestApp-Resources: 857244f3a23f2b3157b364fa06cf3e8866deff9c
-  rn-calmgeo: e7b3183a6721a911a68ed155ecafd230c5899035
+  rn-calmgeo: 58b48300117118fbf571d3931f656a03baa3762a
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: fb61b2337c7688c81a137e5560b3cbb515289f91
 

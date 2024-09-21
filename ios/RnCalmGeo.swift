@@ -126,7 +126,7 @@ class RnCalmGeo: RCTEventEmitter {
     reject: RCTPromiseRejectBlock
   ) {
     if #available(iOS 17.0, *) {
-      resolve(_service?.state ?? nil == .running)
+      resolve((_service?.state ?? nil) == .running)
     } else {
       resolve(false)
     }
