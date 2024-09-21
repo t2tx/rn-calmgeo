@@ -41,5 +41,5 @@ Pod::Spec.new do |s|
       s.dependency "ReactCommon/turbomodule/core"
     end
   end
-  s.dependency "CalmGeo", "~> 0.9.9"
+  s.dependency "CalmGeo", "~> 0.9.11"
 end
