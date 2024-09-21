@@ -43,6 +43,7 @@ pod install
 | clear(): Promise<void>                                 | clear local storage                                                          |
 | sync(): Promise<void>                                  | upload to server                                                             |
 | registerListener(listener: [Listener](#24-listener))   | regist location listener, return a unsubscriber function object `() => void` |
+| isRunning(): Promise<boolean>                          | `true` if the service is running                                             |
 
 ### 2. Types
 

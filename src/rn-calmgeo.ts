@@ -53,6 +53,10 @@ async function sync(): Promise<void> {
   return rnCalmGeo.sync();
 }
 
+async function isRunning(): Promise<boolean> {
+  return rnCalmGeo.isRunning();
+}
+
 function registerListener(listener: Listener) {
   events.addListener('onLocation', (locationJson: string) => {
     const mid = locationSchema.safeParse(JSON.parse(locationJson));
@@ -75,5 +79,6 @@ export const RnCalmGeo = {
   getLocation,
   clear,
   sync,
+  isRunning,
   registerListener,
 };

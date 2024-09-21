@@ -120,6 +120,18 @@ class RnCalmGeo: RCTEventEmitter {
     }
   }
 
+  @objc(isRunning:withRejecter:)
+  func isRunning(
+    resolve: RCTPromiseResolveBlock,
+    reject: RCTPromiseRejectBlock
+  ) {
+    if #available(iOS 17.0, *) {
+      resolve(_service?.state ?? nil == .running)
+    } else {
+      resolve(false)
+    }
+  }
+
   // ---------- private methods ----------
   private func parseConfig(_ config: String) throws -> CalmGeoConfigType {
     let rnConfig = try JSONDecoder().decode(

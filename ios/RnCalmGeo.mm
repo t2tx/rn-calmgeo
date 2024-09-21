@@ -26,7 +26,10 @@ RCT_EXTERN_METHOD(clear:(RCTPromiseResolveBlock)resolve
 // sync
 RCT_EXTERN_METHOD(sync:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)                 
-                 
+// isRunning
+RCT_EXTERN_METHOD(isRunning:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+                                  
 + (BOOL)requiresMainQueueSetup
 {
   return NO;

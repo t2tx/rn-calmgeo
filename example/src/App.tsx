@@ -29,6 +29,7 @@ export default function App() {
   const [count, setCount] = useState<number | undefined>();
   const [result, setResult] = useState<string | undefined>();
   const [loca, setLoca] = useState<Location | undefined>();
+  const [isRunning, setIsRunning] = useState<boolean | undefined>();
 
   useEffect(() => {
     RnCalmGeo.start(configJson).then((value: boolean) => {
@@ -48,6 +49,12 @@ export default function App() {
     return clean;
   }, []);
 
+  const handleIsRunning = async () => {
+    const value = await RnCalmGeo.isRunning();
+    console.log('isRunning', value);
+    setIsRunning(value);
+  };
+
   return (
     <View style={styles.container}>
       <Text>Result: {result}</Text>
@@ -58,6 +65,7 @@ export default function App() {
       <Button title="Sync" onPress={() => RnCalmGeo.sync()} />
       <Button title="Clear" onPress={() => RnCalmGeo.clear()} />
       <Button title="Location" onPress={() => RnCalmGeo.getLocation()} />
+      <Button title={`Is Running - ${isRunning}`} onPress={handleIsRunning} />
     </View>
   );
 }
